@@ -28,8 +28,10 @@ export default class AllArtists extends Component {
   render () {
 
     //CURRENT ISSUEEEEEE
+    let mySearch= new RegExp(this.state.searchValue, "i")
 
-    const artists = this.state.artists.filter(artist => artist.name.match(this.state.searchValue) )
+    const artists = this.state.artists.filter(artist => artist.name.match(mySearch) ? artist.name : null)
+
     //Ok this is currently giving us all the things that do NOT match the value provided :'D so if you put in "b" it gives you everything that does not have a b.
 
     console.log(artists);
