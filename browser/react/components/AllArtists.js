@@ -7,8 +7,10 @@ export default class AllArtists extends Component {
   constructor () {
     super();
     this.state = {
-      artists: []
+      artists: [],
+      searchValue: ''
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount () {
@@ -17,21 +19,38 @@ export default class AllArtists extends Component {
       .then(artists => this.setState({ artists }));
   }
 
+  handleChange(event){
+    this.setState({ searchValue: event.target.value });
+    //filtering the artists by the searchValue
+
+  }
+
   render () {
 
-    const artists = this.state.artists;
+    //CURRENT ISSUEEEEEE
+
+    const artists = this.state.artists.filter(artist => artist.name.match(this.state.searchValue) )
+    //Ok this is currently giving us all the things that do NOT match the value provided :'D so if you put in "b" it gives you everything that does not have a b.
+
+    console.log(artists);
 
     return (
       <div>
+        <form action="" className="form-group">
+            <input type="text" className="form-control"
+            placeholder='Enter artist name' onChange={this.handleChange}
+            />
+        </form>
         <h3>Artists</h3>
         <div className="list-group">
           {
+
             artists.map(artist => {
               return (
                 <div className="list-group-item" key={artist.id}>
                   <Link to={`/artists/${artist.id}`}>{ artist.name }</Link>
                 </div>
-              );
+              )
             })
           }
         </div>
