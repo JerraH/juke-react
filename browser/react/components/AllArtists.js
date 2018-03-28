@@ -28,9 +28,9 @@ export default class AllArtists extends Component {
   render () {
 
     //CURRENT ISSUEEEEEE
-    let mySearch= new RegExp(this.state.searchValue, "i")
+    let mySearch= new RegExp(this.state.searchValue, "i");
 
-    const artists = this.state.artists.filter(artist => artist.name.match(mySearch) ? artist.name : null)
+    const artists = this.state.artists.filter(artist => artist.name.match(mySearch) ? artist.name : null);
 
     //Ok this is currently giving us all the things that do NOT match the value provided :'D so if you put in "b" it gives you everything that does not have a b.
 
@@ -40,8 +40,7 @@ export default class AllArtists extends Component {
       <div>
         <form action="" className="form-group">
             <input type="text" className="form-control"
-            placeholder='Enter artist name' onChange={this.handleChange}
-            />
+            placeholder='Enter artist name' onChange={this.handleChange} />
         </form>
         <h3>Artists</h3>
         <div className="list-group">

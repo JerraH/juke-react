@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import Bluebird from 'bluebird';
 import axios from 'axios';
-import AllAlbums from './AllAlbums';
+import AllAlbums from './AllAlbums.jsx';
 import Songs from './Songs';
 
 class SingleArtist extends React.Component {
@@ -11,6 +11,7 @@ class SingleArtist extends React.Component {
     super();
     this.state = {
       artist: {}
+
     };
   }
 

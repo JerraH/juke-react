@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import AllAlbums from './AllAlbums';
+import AllAlbums from './AllAlbums.jsx';
 
 export default class StatefulAlbums extends Component {
 
