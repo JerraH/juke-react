@@ -6,7 +6,7 @@ import AllArtists from './AllArtists';
 import SingleArtist from './SingleArtist';
 import Sidebar from './Sidebar';
 import Player from './Player';
-import NewPlaylist from './NewPlaylist';
+import NewPlaylist from './NewPlaylist.js';
 
 export default class Main extends Component {
 

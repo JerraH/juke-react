@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NewPlaylist from './NewPlaylist';
+import NewPlaylist from './NewPlaylist.js';
 
 const Sidebar = (props) => {
 
